@@ -104,6 +104,20 @@ button {
   font-family: var(--font-family-base);
 }
 
+button {
+  border: solid 1px #000;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border-width: 1px;
+  background-color: #eebbdd;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--color-border-with-background);
+}
+
 /*** Allar fyrirsagnir nota Matemasie regular ***/
 h1,
 h2,
@@ -171,6 +185,18 @@ header {
 
 /** Valmynd **/
 
+nav {
+  flex: 0 1 200px;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0.5rem;
+}
+
 
 /** Meginmál og efni forsíðu **/
 
@@ -189,15 +215,43 @@ main section {
   margin-bottom: 1rem;
 }
 
-/* main img {
+/*** Inngangsefni á forsíðu ***/
+
+.front-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.front-page .image img {
   float: right;
+  display: block;
   margin-left: 1rem;
   margin-bottom: 1rem;
   max-width: 300px;
   border-radius: 10px;
-} */
+}
 
-/*** Inngangsefni á forsíðu ***/
+.front-page > .content {
+  display: flex;
+  gap: var(--spacing);
+  width: 100%;
+}
+
+.index-spil,
+.index-vidburdir {
+  width: calc(50% - var(--spacing));
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing);
+  border: var(--border-regular);
+  border-radius: var(--border-radius-regular);
+}
+
+.index-spil,
+.index-vidburdir .vidburdir-buttons {
+  display: flex;
+  gap: var(--spacing);
+}
 
 /* TODO nota úr sýnilausn eða þinni lausn, hér þarf að aðlaga,
 hugsanlega setja nýjan flex container utan um bæði þetta og .cards */
@@ -224,9 +278,10 @@ hugsanlega setja nýjan flex container utan um bæði þetta og .cards */
 /** Card **/
 
 .card {
-  border: var(--border-regular);
-  gap: var(--spacing);
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+
+  width: calc(50% - var(--spacing));
 }
 
 .card > .image {
@@ -234,14 +289,28 @@ hugsanlega setja nýjan flex container utan um bæði þetta og .cards */
 }
 
 .card .image img {
-  /* TODO nota úr sýnilausn eða þinni lausn */
+  display: block;
+
+  border-top-left-radius: var(--border-radius-regular);
+  border-top-right-radius: var(--border-radius-regular);
   width: 100%;
   height: 300px;
   object-fit: cover;
+  object-position: 50% 50%;
 }
 
 .card > .content {
-  /* TODO nota úr sýnilausn eða þinni lausn */
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+
+  padding: calc(var(--spacing) / 2);
+  border: var(--border-regular);
+  border-top: 0;
+  border-bottom-left-radius: var(--border-radius-regular);
+  border-bottom-right-radius: var(--border-radius-regular);
 }
 
 /**
