@@ -294,10 +294,6 @@ hugsanlega setja nýjan flex container utan um bæði þetta og .cards */
   width: 100%;
 }
 
-.card .image {
-  
-}
-
 .card .image img {
   display: block;
   padding: 0;
@@ -425,10 +421,16 @@ table td:last-child {
 
 /** Viðburðir **/
 
-.event {
-  clear: left;
+.content-event {
+  display: flex;
+  gap: var(--spacing);
+}
 
-  width: 100%;
+.event {
+  display: flex;
+  flex-direction: column;
+  clear: left;
+  width: calc(50% - var(--spacing));
   margin-bottom: 2rem;
 }
 
@@ -438,13 +440,25 @@ table td:last-child {
 
 .event .content {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: var(--border-regular);
+  border-radius: var(--border-radius-regular);
 }
 
-.event img {
-  float: left;
+.event > .content {
+  flex: 1;
+  width: 100%;
+  padding: calc(var(--spacing) / 2);
+}
 
-  margin-right: 1rem;
-  margin-bottom: 1rem;
+.event .content img {
+  width: 100%;
+  display: block;
+  padding: 0;
+  margin: 0;
+  border-top-left-radius: var(--border-radius-regular);
+  border-top-right-radius: var(--border-radius-regular);
 }
 
 .event .register {
