@@ -169,7 +169,7 @@ a {
   display: flex;
   gap: var(--spacing);
   width: 100%;
-  max-width: 900px;
+  max-width: 1200px;
 }
 
 /* Það sem fylgir er tillaga að uppbyggingu á selectorum fyrir verkefnið */
@@ -186,7 +186,8 @@ header {
 /** Valmynd **/
 
 nav {
-  flex: 0 1 200px;
+  flex: 0 1 250px;
+  width: 250px;
 }
 
 nav ul {
@@ -201,7 +202,7 @@ nav ul li {
 /** Meginmál og efni forsíðu **/
 
 main {
-  
+  width: 100%;
 }
 
 main > .content {
@@ -225,6 +226,7 @@ main section {
 .front-page .image img {
   float: right;
   display: block;
+  margin-right: 1rem;
   margin-left: 1rem;
   margin-bottom: 1rem;
   max-width: 300px;
@@ -242,15 +244,20 @@ main section {
   width: calc(50% - var(--spacing));
   display: flex;
   flex-direction: column;
+  justify-content: s;
   padding: var(--spacing);
   border: var(--border-regular);
   border-radius: var(--border-radius-regular);
 }
 
 .index-spil,
-.index-vidburdir .vidburdir-buttons {
-  display: flex;
+.index-vidburdir {
   gap: var(--spacing);
+}
+
+.index-vidburdir .actions {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* TODO nota úr sýnilausn eða þinni lausn, hér þarf að aðlaga,
@@ -280,7 +287,6 @@ hugsanlega setja nýjan flex container utan um bæði þetta og .cards */
 .card {
   display: flex;
   flex-direction: column;
-
   width: calc(50% - var(--spacing));
 }
 
@@ -288,9 +294,14 @@ hugsanlega setja nýjan flex container utan um bæði þetta og .cards */
   width: 100%;
 }
 
+.card .image {
+  
+}
+
 .card .image img {
   display: block;
-
+  padding: 0;
+  margin: 0;
   border-top-left-radius: var(--border-radius-regular);
   border-top-right-radius: var(--border-radius-regular);
   width: 100%;
@@ -442,9 +453,32 @@ table td:last-child {
 
 /** Skráningarform **/
 
+.form-vidburdur {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.form-vidburdur > .content {
+  display: flex;
+  gap: var(--spacing);
+  width: 100%;
+}
+
+.fieldset-container {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing);
+  width: 100%;
+}
+
 fieldset {
+  flex: 1;
   margin-bottom: 1rem;
-  border: 0;
+  padding: 1rem;
+  border: var(--border-regular);
+  border-radius: var(--border-radius-regular);
+  gap: var(--spacing);
 }
 
 fieldset legend {
@@ -478,10 +512,7 @@ fieldset input[type='checkbox'] {
   width: auto;
 }
 
-form button {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  border-width: 1px;
-  background-color: #eebbdd;
+.fieldset-container .actions {
+  margin-top: 160px;
+  margin-bottom: 0;
 }
